@@ -1,0 +1,43 @@
+Arguments: 
+  /Users/ric/.nvm/versions/node/v10.4.1/bin/node /usr/local/bin/yarn add -D typescript parcel-bundler
+
+PATH: 
+  /Users/ric/.nvm/versions/node/v10.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  10.4.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:50:26)
+
+npm manifest: 
+  {
+    "name": "ric-psite",
+    "version": "1.0.0",
+    "description": "Ric's personal website",
+    "main": "index.js",
+    "scripts": {
+      "test": "",
+      "start": "node_modules/parcel-bundler/bin/"
+    },
+    "author": "Ricardo Monteiro",
+    "license": "MIT",
+    "devDependencies": {
+    },
+    "dependencies": {
+      "preact": "8.2.9"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

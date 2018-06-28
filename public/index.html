@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Preact test</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      var rnd = (new Date()).getTime();
+      var b = document.createElement("script");
+      b.src = "./bundle.js?v=" + rnd;
+      b.type = "text/javascript";
+      document.body.appendChild(b);
+    </script>
+  </body>
+</html>
