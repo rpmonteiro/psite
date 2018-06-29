@@ -1,22 +1,50 @@
 import { h, render, Component } from 'preact';
+import { Home } from './routes/home';
+import { NotFound } from './routes/not-found';
+import { About } from './routes/about';
+import { Link } from './components/link';
+import { pushStateMonkeyPatch } from './utils/monkey-patch';
+import { NavBar } from './components/navbar';
 
-export class App extends Component {
+interface State {
+  location: string;
+}
+
+export class App extends Component<{}, State> {
   state = {
-    location: '/'
-  }
+    location: window.location.pathname
+  };
 
   componentDidMount() {
-    window.addEventListener('popstate', this.updateLocation);
+    pushStateMonkeyPatch();
+    window.addEventListener('pushstate', this.updateLocation);
   }
 
   updateLocation = () => {
-    console.log('popState', window.location.pathname);
     this.setState({ location: window.location.pathname });
   }
 
   render() {
+    const { location } = this.state;
+
+    let component;
+    switch (location) {
+      case '/':
+        component = <Home />;
+        break;
+      case '/about':
+        component = <About />;
+        break;
+      default:
+        component = <NotFound />;
+        break;
+    }
+
     return (
-      <div>This</div>
-    )
+      <div class="app">
+        <NavBar />
+        {component}
+      </div>
+    );
   }
 }
