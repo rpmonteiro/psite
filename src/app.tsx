@@ -45,7 +45,7 @@ export class App extends Component<{}, State> {
     }
 
     return (
-      <div class="app container-fluid">
+      <div class="app">
         {component}
       </div>
     );
