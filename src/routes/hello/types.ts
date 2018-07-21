@@ -1,11 +1,10 @@
-import { Ref } from 'preact';
-
 export interface CanvasData {
   w: number;
   h: number;
+  dpi: number;
   ctx: CanvasRenderingContext2D;
   cursor: string;
-  canvasRef: Ref<HTMLCanvasElement>;
+  canvasRef: HTMLCanvasElement;
   lastSentence: string;
   backgroundColor: string;
 }
