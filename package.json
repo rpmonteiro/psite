@@ -25,7 +25,9 @@
     "typescript": "2.9.2"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.6",
     "app": "^0.1.0",
+    "classnames": "^2.2.6",
     "components": "^0.1.0",
     "preact": "8.2.9",
     "routes": "^2.1.0"
